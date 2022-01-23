@@ -35,10 +35,10 @@ if five_letter_word[4] == single_char:
     count = count + 1 
 
 if count == 1: 
-    print(str(len) + " instance of " + single_char + " found in " + five_letter_word)
+    print(str(count) + " instance of " + single_char + " found in " + five_letter_word)
 else: 
     if count > 1:
-        print(str(len) + " instances of " + single_char + " found in " + five_letter_word)
+        print(str(count) + " instances of " + single_char + " found in " + five_letter_word)
 
 if count == 0: 
     print("No instances of " + single_char + " found in " + five_letter_word)
