@@ -6,8 +6,8 @@ secret: str = "codes"
 
 
 def contains_char(word_string: str, char: str) -> bool: 
-    """searching for a specific letter."""
-    assert len(char) == 1 
+    """Searching for a specific letter."""
+    assert len(char) == 1
     i: int = 0
     while i < len(word_string):
         # the while loop is to ensure that the second string(char) is found at any index of the first string(word_string)
@@ -20,7 +20,7 @@ def contains_char(word_string: str, char: str) -> bool:
 
 
 def emojified(guess: str, secret: str) -> str:
-    """calling to test for yellow, white or green box emoji"""
+    """Calling to test for yellow, white or green box emoji."""
     assert len(guess) == len(secret)
     i: int = 0 
     emoji: str = ""
@@ -42,26 +42,26 @@ def emojified(guess: str, secret: str) -> str:
     return emoji 
 
 
-def input_guess(expected_len: str) -> str: 
-    """Asks the user for a guess until they provide a guess of the expected length"""
-    guess: str = input(f"Enter a {len(expected_len)} character word: ")
-    while len(guess) != len(expected_len): 
+def input_guess(expected_len: int) -> str: 
+    """Asks the user for a guess until they provide a guess of the expected length."""
+    guess: str = input(f"Enter a {str(expected_len)} character word: ")
+    while len(guess) != (expected_len): 
         # if the input doesn't equal to the expected length, then it will print notifying the user that was not the expected letters. 
-        guess = input(f"That was not {len(expected_len)} letters! Try again: ")  
+        guess = input(f"That wasn't {str(expected_len)} chars! Try again: ")  
     return guess 
-# keeps asking the user for a guess until it meets the desired or expected length of the secret word
+# keeps asking the user for a guess until it meets the desired or expected length of the secret word.
 
 
 def main() -> None: 
-    """The entrypoint and main game loop that keeps track of turns or whether if the user has won or not. """
+    """The entrypoint and main game loop that keeps track of turns or whether if the user has won or not."""
     track: int = 1 
     won: bool = False
-# won variable is a bool set to false that is later used in the while loop 
-# it will either return true or false whether the user won the game or not 
-    while track < 6 and not won:
+    # won variable is a bool set to false that is later used in the while loop 
+    # it will either return true or false whether the user won the game or not 
+    while track < 7 and not won:
         # main keeps track of turns or guesses left or used 
-        print(f"== Turn {track}/6 ===")
-        guess: str = input_guess(secret)  
+        print(f"=== Turn {track}/6 ===")
+        guess: str = input_guess(len(secret))  
         print(emojified(guess, secret))
         if guess == secret:
             # keeps track of whether the user has won or not
