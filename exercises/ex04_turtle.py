@@ -1,4 +1,6 @@
-"""Mountain View"""
+"""Mountain View."""
+
+
 __author__ = "730480631" 
 
 from turtle import Turtle, colormode, done
@@ -43,7 +45,7 @@ def background(sky: Turtle, x: float, y: float, lenght: float, width: float) -> 
     sky.end_fill()
 
 
-def draw_mountain(mountain: Turtle, x: float, y: float):
+def draw_mountain(mountain: Turtle, x: float, y: float) -> None: 
     """A triangle mountain."""
     mountain.penup()
     mountain.pencolor(154, 177, 179)
