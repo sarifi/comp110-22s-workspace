@@ -1,9 +1,11 @@
-"""Tests for ex05."""
+"""Unit test for functions in utils.py."""
 
 
 __author__ = "730480631" 
 
-from exercises.ex05.utils import only_evens, sub, concat
+from utils import only_evens
+from utils import sub 
+from utils import concat
 
 
 def test_only_even_one() -> None: 
@@ -26,7 +28,7 @@ def test_only_even_three() -> None:
 
 def test_sub_one() -> None:
     """Test one for sub."""
-    btwn: list[int] = [20, 30, 40, 50]
+    btwn: list[int] = [20, 30, 40, 50, 60]
     assert sub(btwn, 1, 3) == [30, 40]
 
 
@@ -61,4 +63,3 @@ def test_concat_three() -> None:
     first: list[int] = [1, 2, 4, 6]
     second: list[int] = [8, 10, 12, 14, 16]
     assert concat(first, second,) == [1, 2, 4, 6, 8, 10, 12, 14, 16]
-    

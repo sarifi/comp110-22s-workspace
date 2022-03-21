@@ -23,8 +23,26 @@ print(f"UNC has {schools['UNC']} students")
 # by its key. 
 schools.pop("Duke")
 
-# Test for the existance of a key
-is_duke_present: bool = "Duke" in schools
-print(f"Duke is present: {is_duke_present}")
 
-print
+# Test for the existance of a key
+if "Duke" in schools: 
+    print("Found the key 'Duke' in schools")
+else: 
+    print("No key 'Duke' in schools") 
+
+# Update / Reassign a key-value pair 
+schools["UNC"] = 20000
+schools["NCSU"] +=  200 
+
+# print(schools["UNCC"])
+
+schools = {} 
+print(schools)
+
+schools = {"UNC": 19400, "Duke": 6717, "NCSU": 26150}
+print(schools)
+
+# print(schools["UNCC"])
+
+for school in schools: 
+    print(f"key: [school] -> Value: {schools[school]}") 
